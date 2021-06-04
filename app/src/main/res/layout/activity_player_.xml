@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="10"
+    android:background="#4CAF50"
+    android:orientation="vertical"
+    tools:context=".PlayerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvPlayerSongName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@android:color/transparent"
+            android:ellipsize="marquee"
+            android:gravity="center_horizontal"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="@string/list_item_songNameText"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="italic" />
+
+        <ImageView
+            android:id="@+id/ivPlayerSongImage"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/list_item_image_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_music" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/prevButton"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:background="@drawable/ic_baseline_skip_previous_24"
+                app:layout_constraintEnd_toStartOf="@+id/playPauseButton"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/playPauseButton"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:background="@drawable/ic_pause"
+                app:layout_constraintBottom_toBottomOf="@+id/prevButton"
+                app:layout_constraintEnd_toStartOf="@+id/nextButton"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/prevButton"
+                app:layout_constraintTop_toTopOf="@+id/prevButton" />
+
+            <Button
+                android:id="@+id/nextButton"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:background="@drawable/ic_baseline_skip_next_24"
+                app:layout_constraintBottom_toBottomOf="@+id/playPauseButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/playPauseButton"
+                app:layout_constraintTop_toTopOf="@+id/playPauseButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.gauravk.audiovisualizer.visualizer.BarVisualizer
+            xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/barVisualiser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            custom:avDensity="0.5"
+            custom:avType="outline"
+            custom:avColor="@color/av_dark_blue"
+            custom:avSpeed="normal"/>
+
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
