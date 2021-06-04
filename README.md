@@ -24,7 +24,7 @@ Just download it from latest release and give the required permission -
 [scrn1]: screenshots/scrn1.jpg
 [scrn2]: screenshots/scrn2.jpg
 [scrn3]: screenshots/scrn3.jpg
-[scrn4]: screenshots/scrn4.jpg
+[scrn4]: screenshots/scrn4-updated.jpg
 
 ![Screenshot1][scrn1]
 ![Screenshot2][scrn2]

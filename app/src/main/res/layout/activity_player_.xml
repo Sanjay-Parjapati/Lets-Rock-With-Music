@@ -42,6 +42,44 @@
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_music" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:alpha="1">
+
+            <TextView
+                android:id="@+id/seekbarstart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seekbar_Start"
+                app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+                app:layout_constraintEnd_toStartOf="@+id/seekBar"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/seekBar" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/seekbarEnd"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/seekbarstart" />
+
+            <TextView
+                android:id="@+id/seekbarEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seekbar_stop"
+                app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/seekBar"
+                app:layout_constraintTop_toTopOf="@+id/seekBar" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -53,43 +91,71 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp">
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/fastRewindButton"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:alpha="1"
+                android:background="@drawable/ic_fast_rewind"
+                app:layout_constraintBottom_toBottomOf="@+id/playPauseButton"
+                app:layout_constraintEnd_toStartOf="@+id/prevButton"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/playPauseButton" />
 
             <Button
                 android:id="@+id/prevButton"
                 android:layout_width="40dp"
                 android:layout_height="0dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/ic_baseline_skip_previous_24"
+                app:layout_constraintBottom_toBottomOf="@+id/playPauseButton"
                 app:layout_constraintEnd_toStartOf="@+id/playPauseButton"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/fastRewindButton"
+                app:layout_constraintTop_toTopOf="@+id/playPauseButton" />
 
             <Button
                 android:id="@+id/playPauseButton"
                 android:layout_width="40dp"
                 android:layout_height="0dp"
                 android:background="@drawable/ic_pause"
-                app:layout_constraintBottom_toBottomOf="@+id/prevButton"
                 app:layout_constraintEnd_toStartOf="@+id/nextButton"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/prevButton"
-                app:layout_constraintTop_toTopOf="@+id/prevButton" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/nextButton"
                 android:layout_width="40dp"
                 android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
                 android:background="@drawable/ic_baseline_skip_next_24"
                 app:layout_constraintBottom_toBottomOf="@+id/playPauseButton"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fastForwardbutton"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/playPauseButton"
                 app:layout_constraintTop_toTopOf="@+id/playPauseButton" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/fastForwardbutton"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:alpha="1"
+                android:background="@drawable/ic_fast_forward"
+                app:layout_constraintBottom_toBottomOf="@+id/playPauseButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/nextButton"
+                app:layout_constraintTop_toTopOf="@+id/playPauseButton" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <com.gauravk.audiovisualizer.visualizer.BarVisualizer
             xmlns:custom="http://schemas.android.com/apk/res-auto"
             android:id="@+id/barVisualiser"
